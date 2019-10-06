@@ -1,0 +1,18 @@
+uuid: a614d22b-9e8e-404f-97fc-c705cf88de2d
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Equipos
+type: equipos
+description: 'Usar para agregar equipos'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

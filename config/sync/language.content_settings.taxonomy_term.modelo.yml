@@ -1,0 +1,11 @@
+uuid: 7a6ca2ab-f8c3-4b4f-9549-d8ced4b8e247
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.modelo
+id: taxonomy_term.modelo
+target_entity_type_id: taxonomy_term
+target_bundle: modelo
+default_langcode: site_default
+language_alterable: false

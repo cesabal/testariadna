@@ -1,0 +1,23 @@
+uuid: 36d417cf-1d28-477e-8237-3f5c8e580593
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_precio
+    - node.type.equipos
+id: node.equipos.field_precio
+field_name: field_precio
+entity_type: node
+bundle: equipos
+label: Precio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

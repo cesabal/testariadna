@@ -1,0 +1,207 @@
+uuid: 1db9fea6-f3f8-42a5-a9f1-0c458074078c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.equipos.body
+    - field.field.node.equipos.field_image
+    - field.field.node.equipos.field_marca
+    - field.field.node.equipos.field_modelo
+    - field.field.node.equipos.field_planes
+    - field.field.node.equipos.field_precio
+    - field.field.node.equipos.field_tipo
+    - image.style.equipo_principal_450x400
+    - node.type.equipos
+  module:
+    - ds
+    - field_group
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col_bricked
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          top:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          top_left:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          top_right:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          middle:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          bottom_left:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          bottom_right:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          bottom:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      top_left:
+        - field_image
+      top_right:
+        - node_title
+        - field_precio
+        - body
+      middle:
+        - field_planes
+        - group_informacion
+        - field_marca
+        - group_planes
+        - field_modelo
+        - group_especificaciones
+        - field_tipo
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+  field_group:
+    group_informacion:
+      children:
+        - group_planes
+        - group_especificaciones
+      parent_name: ''
+      weight: 4
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Informacion
+      region: content
+    group_planes:
+      children:
+        - field_planes
+      parent_name: group_informacion
+      weight: 5
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+      label: Planes
+      region: content
+    group_especificaciones:
+      children:
+        - field_marca
+        - field_modelo
+        - field_tipo
+      parent_name: group_informacion
+      weight: 6
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Especificaciones
+      region: content
+id: node.equipos.default
+targetEntityType: node
+bundle: equipos
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: top_right
+  field_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: equipo_principal_450x400
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: top_left
+  field_marca:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: middle
+  field_modelo:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: middle
+  field_planes:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: middle
+  field_precio:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: top_right
+  field_tipo:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: middle
+hidden:
+  langcode: true
+  links: true

@@ -1,0 +1,13 @@
+uuid: 0744800a-e3a5-461a-b86a-c8b66d5d3133
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: N0RDBTqiK4dKoN4p4oW2j0SGWycdHyALUe9M-Ofp89U
+id: node_promote_action
+label: 'Publicar contenido en la portada'
+type: node
+plugin: node_promote_action
+configuration: {  }

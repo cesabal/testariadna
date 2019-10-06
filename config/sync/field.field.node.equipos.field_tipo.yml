@@ -1,0 +1,25 @@
+uuid: 18dacb64-0bc9-405a-aa08-0a42b12d09be
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo
+    - node.type.equipos
+id: node.equipos.field_tipo
+field_name: field_tipo
+entity_type: node
+bundle: equipos
+label: Tipo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: tipo
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,15 @@
+uuid: 27514ae2-2a5b-4c19-b290-24a70912e2ba
+langcode: es
+status: true
+dependencies: {  }
+name: equipo_principal_450x400
+label: Equipo_principal_450x400
+effects:
+  e5111a81-1711-4658-84aa-f4c89ebff20e:
+    uuid: e5111a81-1711-4658-84aa-f4c89ebff20e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 400
+      anchor: center-center

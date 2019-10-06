@@ -1,0 +1,41 @@
+uuid: 32cecd84-b2c5-49d8-abfb-3343defa8395
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.planes.body
+    - field.field.node.planes.field_precio
+    - node.type.planes
+  module:
+    - text
+    - user
+id: node.planes.default
+targetEntityType: node
+bundle: planes
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_precio:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

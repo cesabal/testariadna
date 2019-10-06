@@ -1,0 +1,26 @@
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://ariadna.clandazabal.com:8080/themes/contrib/ariadna/favicon.ico'
+  use_default: 1
+schemas:
+  bootstrap: 8000
+  ariadna: 8000
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: ''
+  url: ''
+  use_default: 1
+table_responsive: '-1'
+navbar_position: fixed-top
+cdn_theme: sandstone
+cdn_cache_ttl_versions: '604800'
+cdn_cache_ttl_themes: '604800'
+cdn_cache_ttl_assets: '0'
+cdn_cache_ttl_library: '0'
+reset_http_request_cache: ''
+table: ''

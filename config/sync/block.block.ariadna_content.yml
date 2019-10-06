@@ -1,0 +1,22 @@
+uuid: 5625aa1b-a332-49ba-bad0-8cc1079ecd71
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ariadna
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: ariadna_content
+theme: ariadna
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  provider: system
+  label_display: '0'
+visibility: {  }

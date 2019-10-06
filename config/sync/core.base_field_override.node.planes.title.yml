@@ -1,0 +1,18 @@
+uuid: 8a4b235d-a6bf-434c-98f5-7e988fd79093
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.planes
+id: node.planes.title
+field_name: title
+entity_type: node
+bundle: planes
+label: Nombre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

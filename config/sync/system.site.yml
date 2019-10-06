@@ -1,0 +1,14 @@
+uuid: 98d8420a-6227-4d2d-8d33-f27bb9fc58a5
+name: 'Test de prueba Ariadna'
+mail: cesabal_cu@hotmail.com
+slogan: 'Prueba drupal'
+page:
+  403: ''
+  404: ''
+  front: /node/8
+admin_compact_mode: false
+weight_select_max: 100
+langcode: es
+default_langcode: es
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

@@ -1,0 +1,31 @@
+uuid: ae9caf34-1989-4a07-9e30-e9c651deb69f
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.equipos.body
+    - node.type.equipos
+  module:
+    - text
+    - user
+id: node.equipos.teaser
+targetEntityType: node
+bundle: equipos
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

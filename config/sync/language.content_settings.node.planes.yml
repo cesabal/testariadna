@@ -1,0 +1,11 @@
+uuid: b5722c62-92d1-4e4a-a894-e5b8fede717d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.planes
+id: node.planes
+target_entity_type_id: node
+target_bundle: planes
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,20 @@
+uuid: 9fa96cf4-880b-4570-8280-520be2689dc5
+langcode: es
+status: true
+dependencies:
+  theme:
+    - ariadna
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: ariadna_local_actions
+theme: ariadna
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones primarias de administración'
+  provider: core
+  label_display: '0'
+visibility: {  }

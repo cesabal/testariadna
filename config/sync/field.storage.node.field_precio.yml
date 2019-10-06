@@ -1,0 +1,18 @@
+uuid: fb207e57-78f4-4634-b41c-36abfd600824
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_precio
+field_name: field_precio
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

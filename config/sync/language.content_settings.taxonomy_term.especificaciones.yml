@@ -1,0 +1,11 @@
+uuid: 909bcc59-afbc-4488-8a41-c82c43cea5da
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.especificaciones
+id: taxonomy_term.especificaciones
+target_entity_type_id: taxonomy_term
+target_bundle: especificaciones
+default_langcode: site_default
+language_alterable: false

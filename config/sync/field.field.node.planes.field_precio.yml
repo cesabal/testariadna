@@ -1,0 +1,23 @@
+uuid: 15f7bea8-1fc4-49a9-bc92-be46b3a23fc8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_precio
+    - node.type.planes
+id: node.planes.field_precio
+field_name: field_precio
+entity_type: node
+bundle: planes
+label: Precio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

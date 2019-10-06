@@ -1,0 +1,15 @@
+uuid: 5710c5b6-0ff2-4f26-a73d-2875601dd69a
+langcode: es
+status: true
+dependencies: {  }
+name: presentacion_320x240
+label: presentacion_360x240
+effects:
+  f69cda65-2935-4d21-a06a-df6530ae2c29:
+    uuid: f69cda65-2935-4d21-a06a-df6530ae2c29
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 240
+      height: 360
+      anchor: center-center

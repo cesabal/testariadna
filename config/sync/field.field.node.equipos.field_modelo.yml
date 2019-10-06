@@ -1,0 +1,29 @@
+uuid: bf22621a-6d5e-4259-a995-f5b0856ac318
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_modelo
+    - node.type.equipos
+    - taxonomy.vocabulary.modelo
+id: node.equipos.field_modelo
+field_name: field_modelo
+entity_type: node
+bundle: equipos
+label: Modelo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modelo: modelo
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

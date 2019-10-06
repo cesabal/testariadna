@@ -1,0 +1,18 @@
+uuid: 09830c24-cc8d-4cee-b05b-3cf47a4bb60d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.equipos
+id: node.equipos.title
+field_name: title
+entity_type: node
+bundle: equipos
+label: Nombre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

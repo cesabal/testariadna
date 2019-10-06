@@ -1,0 +1,28 @@
+uuid: bef6c5cd-bcb8-43ea-8b00-0ae11d762f16
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_planes
+    - node.type.equipos
+    - node.type.planes
+id: node.equipos.field_planes
+field_name: field_planes
+entity_type: node
+bundle: equipos
+label: Planes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      planes: planes
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

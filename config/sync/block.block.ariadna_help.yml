@@ -1,0 +1,22 @@
+uuid: c6ec84e1-278f-4dc2-875e-82a043b479c6
+langcode: es
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - ariadna
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: ariadna_help
+theme: ariadna
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ayuda
+  provider: help
+  label_display: '0'
+visibility: {  }
