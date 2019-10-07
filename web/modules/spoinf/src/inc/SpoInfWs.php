@@ -3,6 +3,7 @@
 namespace Drupal\spoinf\inc;
 
 use Drupal\spoinf\inc\ProcessMessage;
+use Drupal\config_pages\Entity\ConfigPages;
 
 class SpoInfWs{
 	
@@ -13,26 +14,44 @@ class SpoInfWs{
 	var $tempstore;
 
 	var $url = "https://api.spotify.com/v1/playlists/";
-	var $urlArt = 'https://api.spotify.com/v1/artists/';
-	var $urlLastReleases = 'https://api.spotify.com/v1/browse/new-releases';
-	var $urlToken = 'https://accounts.spotify.com/api/token';
-	var $urlAlbum = 'https://api.spotify.com/v1/albums/';
+	var $urlArt;
+	var $urlLastReleases;
+	var $urlToken;
+	var $urlAlbum;
 	var $urlCategoryList;
 	
 
 	/**
-	 * [__construct description]
+	 * Constructor de la clase, se encarga de realizar inicializaciones de variables
+	 * desde la configuración de spotify
 	 */
 	public function __construct(){
 
-		$this->messageHandler = ProcessMessage::getInstance();
-		
-		$this->clientId = '95a06ead2e2f47618483cfe78a48bfff';
-		$this->$clientSecret = 'a1d5fda53ca74ef5914610c5636ac70d';
+		$configuration = ConfigPages::config( 'spotify_config' );
 
+		$this->messageHandler = ProcessMessage::getInstance();
 		$this->tempstore = \Drupal::service('user.private_tempstore')->get('spoinf');
 
-		$this->urlCategoryList = 'https://api.spotify.com/v1/browse/categories';
+		// client id
+		$this->clientId = $configuration->get('field_clientid')->value;
+		
+		// client secret		
+		$this->$clientSecret = $configuration->get('field_clientsecret')->value;;
+
+		// url de albums
+		$this->urlAlbum = $configuration->get('field_urlalbum')->value;
+
+		// url de peticion de token
+		$this->urlToken = $configuration->get('field_urltoken')->value;
+
+		// url de lista de ultimos lanzamientos
+		$this->urlLastReleases = $configuration->get('field_urllastreleases')->value;
+
+		// url de artista
+		$this->urlArt = $configuration->get('field_urlart')->value;
+
+		// url de categorias
+		$this->urlCategoryList = $configuration->get('field_urlcategorylist')->value;
 
 		if( $this->checkvalidToken() == false )
 		{

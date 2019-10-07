@@ -1,0 +1,21 @@
+uuid: 56cec49d-20e2-4493-80e5-24ebef7a1ea2
+langcode: es
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_urlart
+field_name: field_urlart
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

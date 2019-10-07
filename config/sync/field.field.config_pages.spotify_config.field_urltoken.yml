@@ -1,0 +1,21 @@
+uuid: e28a961f-98b9-4fd7-a959-c17db88d5a68
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.spotify_config
+    - field.storage.config_pages.field_urltoken
+id: config_pages.spotify_config.field_urltoken
+field_name: field_urltoken
+entity_type: config_pages
+bundle: spotify_config
+label: 'Url token'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'https://accounts.spotify.com/api/token'
+default_value_callback: ''
+settings: {  }
+field_type: string

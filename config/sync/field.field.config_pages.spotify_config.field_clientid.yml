@@ -1,0 +1,21 @@
+uuid: d46819f8-6257-470e-91ee-ea94efb654f4
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.spotify_config
+    - field.storage.config_pages.field_clientid
+id: config_pages.spotify_config.field_clientid
+field_name: field_clientid
+entity_type: config_pages
+bundle: spotify_config
+label: 'Client id'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 95a06ead2e2f47618483cfe78a48bfff
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 14c370be-efb1-46cf-9f45-f3eb31a26c90
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.spotify_config
+    - field.storage.config_pages.field_urllastreleases
+id: config_pages.spotify_config.field_urllastreleases
+field_name: field_urllastreleases
+entity_type: config_pages
+bundle: spotify_config
+label: 'url Ultimos Lanzamientos'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'https://api.spotify.com/v1/browse/new-releases'
+default_value_callback: ''
+settings: {  }
+field_type: string

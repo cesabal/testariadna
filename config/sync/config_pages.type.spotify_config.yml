@@ -1,0 +1,16 @@
+uuid: 7dfef15f-719d-46ea-a3d7-b92b73900893
+langcode: es
+status: true
+dependencies: {  }
+id: spotify_config
+label: 'Spotify config'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/services/spotify
+  weight: 0
+  description: ''

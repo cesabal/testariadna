@@ -1,0 +1,76 @@
+uuid: 9ce00c9b-ce85-46c0-8dec-03fd6d027bd3
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.spotify_config
+    - field.field.config_pages.spotify_config.field_clientid
+    - field.field.config_pages.spotify_config.field_clientsecret
+    - field.field.config_pages.spotify_config.field_urlalbum
+    - field.field.config_pages.spotify_config.field_urlart
+    - field.field.config_pages.spotify_config.field_urlcategorylist
+    - field.field.config_pages.spotify_config.field_urllastreleases
+    - field.field.config_pages.spotify_config.field_urltoken
+id: config_pages.spotify_config.default
+targetEntityType: config_pages
+bundle: spotify_config
+mode: default
+content:
+  field_clientid:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_clientsecret:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_urlalbum:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_urlart:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_urlcategorylist:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_urllastreleases:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_urltoken:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  label: true

@@ -1,0 +1,21 @@
+uuid: 3c31c4f9-717c-413e-b34b-45656f166f14
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.spotify_config
+    - field.storage.config_pages.field_urlart
+id: config_pages.spotify_config.field_urlart
+field_name: field_urlart
+entity_type: config_pages
+bundle: spotify_config
+label: 'Url artista'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'https://api.spotify.com/v1/artists/'
+default_value_callback: ''
+settings: {  }
+field_type: string
