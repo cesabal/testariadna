@@ -12,3 +12,17 @@ spoinf.artist:
         _title: 'Spotify Information - Artist'
     requirements:
         _permission: 'access content'
+spoinf.generateterms:
+    path: '/admin/spotify/generateterms'
+    defaults:
+        _controller: 'Drupal\spoinf\Controller\SpoInfController::generateterms'
+        _title: 'Spotify Information - Artist'
+    requirements:
+        _permission: 'admin spotify'
+spoinf.removeterms:
+    path: '/admin/spotify/removeterms'
+    defaults:
+        _controller: 'Drupal\spoinf\Controller\SpoInfController::removeterms'
+        _title: 'Spotify Information - Artist'
+    requirements:
+        _permission: 'admin spotify'

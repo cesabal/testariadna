@@ -3,9 +3,11 @@
 namespace Drupal\spoinf\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Url;
 use Drupal\spoinf\inc\SpoInfWs;
 use Drupal\spoinf\inc\ProcessMessage;
+use Drupal\taxonomy\Entity\Term;
 // use Drupal\image\Entity\theme;
 
 /**
@@ -51,9 +53,6 @@ class SpoInfController extends ControllerBase {
 
 	 		list($spotify_, $type_, $idAlbum) = explode(":", $item->uri );
 	 		
-	 		
-
-
 	 		// Columna del nombre
 	 		$name = $item->name;
 
@@ -180,6 +179,55 @@ class SpoInfController extends ControllerBase {
 
   	}
 
+  	/**
+  	 * Genera terminos de taxonomia para el vocabulario Categorias spotify
+  	 * TODO, no tiene control para que no se repitan
+  	 */
+  	public function generateterms(){
+		
+  		
+  		$renders = array();
+
+  		$spotifyWshandler = new SpoInfWs();
+		$categoriesSpo = $spotifyWshandler->getCategories();
+		// echo '<pre>'; print_r($categoriesSpo); echo '</pre>';
+
+		$categories_vocabulary = 'categoria_spotify'; // Vocabulary machine name
+
+		foreach( $categoriesSpo->categories->items as $category ){
+
+
+			$term = Term::create(array(
+			
+				'parent' => array(),
+				'name' => $category->name . '-' . $category->id,
+				'vid' => $categories_vocabulary,
+
+			));
+
+			$term->save();
+
+		}
+
+		$this->messageHandler->addMessage( '200', 'Se importaron' );
+
+		return $renders;
+  	}
+
+  	/**
+  	 * Elimina los termnos de taxonomia de categorias
+  	 */
+  	public function removeterms(){
+	
+  		$renders = array();
+  		$result = \Drupal::entityQuery('taxonomy_term')
+			->condition('vid', 'categoria_spotify')
+			->execute();
+	
+		entity_delete_multiple('taxonomy_term', $result);
+
+		return $renders;
+  	}
   
 
 }

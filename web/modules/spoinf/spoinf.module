@@ -14,23 +14,6 @@ function spoinf_install() {
 	// crear tabla en la base de  datos.
 	// drupal_install_schema('spoinf');
 
-	$spotifyWshandler = new SpoInfWs();
-	$categoriesSpo = $spotifyWshandler->getCategories();
-
-	$categories_vocabulary = 'categoria_spotify'; // Vocabulary machine name
-
-	foreach( $categoriesSpo->items as $category ){
-
-		$term = Term::create(array(
-		
-			'parent' => array(),
-			'name' => $category->name,
-			'field_id_categoria_spotify‎' => $category->id,
-			'vid' => $categories_vocabulary,
-
-		))->save();
-
-	}
 
 }
 
