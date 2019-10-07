@@ -1,0 +1,29 @@
+uuid: 74987aa7-e4a9-42a7-b7dd-eeac5f50ca84
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria
+    - node.type.playlist
+    - taxonomy.vocabulary.categoria_spotify
+id: node.playlist.field_categoria
+field_name: field_categoria
+entity_type: node
+bundle: playlist
+label: Categoria
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categoria_spotify: categoria_spotify
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

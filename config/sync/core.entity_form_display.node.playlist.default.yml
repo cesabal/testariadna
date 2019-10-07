@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.playlist.body
+    - field.field.node.playlist.field_categoria
     - field.field.node.playlist.field_genero
     - field.field.node.playlist.field_image
     - image.style.thumbnail
@@ -32,14 +33,20 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_genero:
-    weight: 122
+  field_categoria:
+    weight: 124
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_genero:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_image:
     weight: 123
