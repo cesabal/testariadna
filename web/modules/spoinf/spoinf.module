@@ -3,9 +3,13 @@
 
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Database\Database;
+
 use Drupal\Core\Block\BlockBase;
 use Drupal\spoinf\inc\SpoInfWs;
 use Drupal\taxonomy\Entity\Term;
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
 * Implementation of hook_install().
@@ -20,21 +24,72 @@ function spoinf_install() {
 /**
 * Implementation of hook_node_view().
 */
-function spoinf_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+function spoinf_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
 
-	// print_r($entity);
-	$categoryidonNode = 'pop';
-	$database = \Drupal::database();
-	$database->select('categoria_spotify', 'cs');
-	$database->fields('cs', array('visits'));
-	$database->condition('cs.category_id', $categoryidonNode, '=');
+	// Si la entidad es un dono
+	if ($entity instanceof \Drupal\node\NodeInterface) {
+	
 
-	// Execute the statement
-	$data = $database->execute();
+		// Si el nodo es de tipo playlist
+		if( $entity->bundle() == 'playlist' )
+		{
 
-	// Get all the results
-	$results = $data->fetchAll(\PDO::FETCH_OBJ);
-	echo '<pre>Resultados de ver si hay coincidencias de categorias'; print_r($results); echo '</pre>';
+			$fieldCategory = $entity->get('field_categoria')->getValue();
+			$categorytargetId = $fieldCategory[0]['target_id'];
+
+			$term = Term::load( $categorytargetId );
+			$name = $term->getName();
+
+			list( $categoryText, $categoryidonNode ) = explode( "-", $name);
+			
+			$connection = \Drupal::database();
+			
+			$data = $connection->select('categorias_spotify', 'cs')
+				->fields('cs', array('visits'))
+				->condition('cs.category_id', $categoryidonNode, '=')
+				->execute();
+
+			// Execute the statement
+			// $data = $connection->execute();
+
+			// Get all the results
+			$results = $data->fetchAll(\PDO::FETCH_OBJ);
+
+			if( empty( $results ) )
+			{
+				$result = $connection->insert('categorias_spotify')
+					->fields([
+						'category_id' => $categoryidonNode,
+						'json' => REQUEST_TIME,
+						'last_visit' => mktime(),
+						'visits' => 0
+					])
+					->execute();
+			}
+			else
+			{
+				$visitas = $results[0]->visits;
+				
+				$visitas++;
+				
+				echo '<pre>visitas '; print_r($visitas); echo '</pre>';
+
+				$updated = $connection->update('categorias_spotify')
+					->fields([
+						'visits' => $visitas,
+					])
+					->condition('category_id', $categoryidonNode, '=')
+					->execute();
+
+			}
+
+			// Hace que no cahcee a entity_view
+			$renderer = \Drupal::service('renderer');
+			$renderer->addCacheableDependency( $build, $entity->nid );
+
+		}
+	}
+
 }
 
 /**
@@ -75,9 +130,10 @@ function spoinf_schema() {
 			),
 			'category_id' => array(
 				'description' => 'Id de categoría.',
-				'type' => 'int',
+				'type' => 'varchar',
+				'length' => 20,
 				'not null' => TRUE,
-				'default' => 0
+				'default' => ''
 			),
 			'json' => array(
 				'description' => 'El json desde el api.',

@@ -23,6 +23,7 @@
         "drupal/admin_toolbar": "^1.27",
         "drupal/bootstrap": "^3.20",
         "drupal/bootstrap_layouts": "^5.1",
+        "drupal/config_pages": "^2.6",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ds": "^3.4",
