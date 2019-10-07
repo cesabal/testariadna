@@ -1,0 +1,6 @@
+categorias_spotify:
+  table_name: categorias_spotify
+  table_database: default
+  description: 'Table que contiene las visitas de cada playlist creado'
+  column_relations: 'a:1:{s:7:"node_id";s:4:"node";}'
+  created_by: '1'

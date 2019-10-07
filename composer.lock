@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91740c1292684ff4e15b564acd78070a",
+    "content-hash": "a011ff07c6cff86f03d571be068791b9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3125,6 +3125,57 @@
             "homepage": "https://www.drupal.org/project/simplenews",
             "support": {
                 "source": "https://git.drupalcode.org/project/simplenews"
+            }
+        },
+        {
+            "name": "drupal/view_custom_table",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/view_custom_table.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/view_custom_table-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "0de88c29bf7c67c345d07cb477105f297eb1d30f"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1553224984",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "sagar_cis",
+                    "homepage": "https://www.drupal.org/user/3487653"
+                },
+                {
+                    "name": "sagarwani",
+                    "homepage": "https://www.drupal.org/user/3221452"
+                }
+            ],
+            "description": "Extends views to use custom table data.",
+            "homepage": "https://www.drupal.org/project/view_custom_table",
+            "support": {
+                "source": "https://git.drupalcode.org/project/view_custom_table"
             }
         },
         {
