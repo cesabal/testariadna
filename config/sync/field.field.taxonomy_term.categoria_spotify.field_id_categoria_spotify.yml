@@ -1,0 +1,23 @@
+uuid: 7c631ca7-ca43-4f5f-9b59-6a6f215a26c2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_id_categoria_spotify
+    - taxonomy.vocabulary.categoria_spotify
+id: taxonomy_term.categoria_spotify.field_id_categoria_spotify
+field_name: field_id_categoria_spotify
+entity_type: taxonomy_term
+bundle: categoria_spotify
+label: 'Id categoría spotify'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

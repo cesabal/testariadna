@@ -1,0 +1,5 @@
+name: Spotify Information
+type: module
+description: 'El modulo muestra informacion acerca de artistas y albumes de spotify para prueba con ariadna'
+package: Custom
+core: 8.x

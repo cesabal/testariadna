@@ -1,0 +1,11 @@
+uuid: 55746513-007a-485b-8dfd-ad1c6dd88755
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categoria_spotify
+id: taxonomy_term.categoria_spotify
+target_entity_type_id: taxonomy_term
+target_bundle: categoria_spotify
+default_langcode: site_default
+language_alterable: false

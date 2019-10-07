@@ -1,0 +1,139 @@
+<?php
+
+
+use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Block\BlockBase;
+use Drupal\spoinf\inc\SpoInfWs;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+* Implementation of hook_install().
+*/
+function spoinf_install() {
+	// crear tabla en la base de  datos.
+	// drupal_install_schema('spoinf');
+
+	$spotifyWshandler = new SpoInfWs();
+	$categoriesSpo = $spotifyWshandler->getCategories();
+
+	$categories_vocabulary = 'categoria_spotify'; // Vocabulary machine name
+
+	foreach( $categoriesSpo->items as $category ){
+
+		$term = Term::create(array(
+		
+			'parent' => array(),
+			'name' => $category->name,
+			'field_id_categoria_spotify‎' => $category->id,
+			'vid' => $categories_vocabulary,
+
+		))->save();
+
+	}
+
+}
+
+/**
+* Implementation of hook_node_view().
+*/
+function spoinf_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+
+	// print_r($entity);
+	$categoryidonNode = 'pop';
+	$database = \Drupal::database();
+	$database->select('categoria_spotify', 'cs');
+	$database->fields('cs', array('visits'));
+	$database->condition('cs.category_id', $categoryidonNode, '=');
+
+	// Execute the statement
+	$data = $database->execute();
+
+	// Get all the results
+	$results = $data->fetchAll(\PDO::FETCH_OBJ);
+	echo '<pre>Resultados de ver si hay coincidencias de categorias'; print_r($results); echo '</pre>';
+}
+
+/**
+* Implementation of hook_uninstall().
+*/
+function spoinf_uninstall() {
+
+	// Remover tablas de la base de datos
+	// drupal_uninstall_schema('spoinf');
+
+	// borra todas las categorias cargas das de spotify
+	
+	// $vocabulary = taxonomy_vocabulary_machine_name_load('categoria_spotify');
+	// foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
+	//   taxonomy_term_delete($term->tid);
+	// }
+
+	$result = \Drupal::entityQuery('taxonomy_term')
+		->condition('vid', 'categoria_spotify')
+		->execute();
+	
+	entity_delete_multiple('taxonomy_term', $result);
+}
+
+/**
+* Implementation of hook_schema().
+*/
+function spoinf_schema() {
+
+	$schema['categorias_spotify'] = array(
+		'description' => t('Stores site types of the social_site module.'),
+		'fields' => array(
+			'node_id' => array(
+				'description' => 'El id de nodo.',
+				'type' => 'serial',
+				'unsigned' => TRUE,
+				'not null' => TRUE
+			),
+			'category_id' => array(
+				'description' => 'Id de categoría.',
+				'type' => 'int',
+				'not null' => TRUE,
+				'default' => 0
+			),
+			'json' => array(
+				'description' => 'El json desde el api.',
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => ''
+			)
+	    ),
+	    'primary key' => array('node_id'),
+
+	);
+
+	return $schema;
+}
+
+/**
+ * Implementation of update_N()
+ * Agrega dos campos a la tabla categorias_spotify, last_visit y visists
+ */
+function spoinf_update_8101(&$sandbox) {
+	
+	$newFieldLastVisit = array(
+		'type' => 'int',
+		'description' => 'Id de categoría.',
+		'not null' => TRUE,
+		'default' => 0
+	);
+
+	$newFieldVisits = array(
+		'type' => 'int',
+		'description' => 'Id de categoría.',
+		'not null' => TRUE,
+		'default' => 0
+	);
+
+	$schema = Database::getConnection()->schema();
+
+	$schema->addField('categorias_spotify', 'last_visit', $newFieldLastVisit);
+	$schema->addField('categorias_spotify', 'visits', $newFieldVisits);
+
+}

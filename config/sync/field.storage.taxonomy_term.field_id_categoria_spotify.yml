@@ -1,0 +1,20 @@
+uuid: ca8b8166-42c9-4139-b8df-017f884e8120
+langcode: es
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_id_categoria_spotify
+field_name: field_id_categoria_spotify
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

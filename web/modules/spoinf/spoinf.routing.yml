@@ -1,0 +1,14 @@
+spoinf.draw:
+    path: '/lanzamientos'
+    defaults:
+        _controller: 'Drupal\spoinf\Controller\SpoInfController::draw'
+        _title: 'Spotify last releases'
+    requirements:
+        _permission: 'access content'
+spoinf.artist:        
+    path: '/artista/{ids}'
+    defaults:
+        _controller: 'Drupal\spoinf\Controller\SpoInfController::artist'
+        _title: 'Spotify Information - Artist'
+    requirements:
+        _permission: 'access content'

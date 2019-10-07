@@ -1,0 +1,29 @@
+uuid: f46f7a50-8eaa-4a2e-bbf4-c351dc47b13a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genero
+    - node.type.playlist
+    - taxonomy.vocabulary.genero
+id: node.playlist.field_genero
+field_name: field_genero
+entity_type: node
+bundle: playlist
+label: Género
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      genero: genero
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

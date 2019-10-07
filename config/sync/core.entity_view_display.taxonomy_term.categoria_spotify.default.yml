@@ -1,0 +1,32 @@
+uuid: 34e90d70-3d26-479f-8557-424632a9920b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.categoria_spotify.field_id_categoria_spotify
+    - taxonomy.vocabulary.categoria_spotify
+  module:
+    - text
+id: taxonomy_term.categoria_spotify.default
+targetEntityType: taxonomy_term
+bundle: categoria_spotify
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_id_categoria_spotify:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true

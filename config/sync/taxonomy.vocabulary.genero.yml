@@ -1,0 +1,8 @@
+uuid: 9d12aa5c-9260-41c4-9ab6-7c83a77fadf3
+langcode: es
+status: true
+dependencies: {  }
+name: Genero
+vid: genero
+description: ''
+weight: 0
